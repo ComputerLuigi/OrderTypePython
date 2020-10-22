@@ -11,5 +11,9 @@ x3y2 = c3[0]*c2[1]
 
 ordertype = x1y2 - x1y3 + x2y3 - x2y1 + x3y1 - x3y2  
 
-print(ordertype)
+print(ordertype* -1)
+
+print(c1)
+print(c2)
+print(c3)
 
