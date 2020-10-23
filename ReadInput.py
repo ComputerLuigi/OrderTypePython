@@ -7,15 +7,16 @@ def pairwise(iterable):
     next(b, None)
     return zip(a, b)
 
-def makeCoordinateList():
-	##reads a file with one x,y pair per line and returns a list of tuples [(x1,y1)...(xn,yn)]
+def ReadInputFile():
 	a = []
 	with open( 'input' ) as f:
 		for line in f:
 			words = line.split(',')
 			b = (int(words[0]),int(words[1]))
 			a += (b)
+		return a
 
+def MakeCoordinateList(a):
 	d = list (pairwise(a))
 	d = d[0::2]
 	return d
@@ -50,7 +51,7 @@ def CountColinear(f):
 		
 		
 def do():
-	a = (ListOrderTypes(CoordinateCombinations(makeCoordinateList())))
+	a = (ListOrderTypes(CoordinateCombinations(MakeCoordinateList(ReadInputFile()))))
 	print (a)
 	print ("Number of colinear triples: " + str(CountColinear(a)))
 
