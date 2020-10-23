@@ -1,7 +1,6 @@
 import OrderType as ot
 import itertools as it
 
-
 def pairwise(iterable):
     "s -> (s0,s1), (s1,s2), (s2, s3), ..."
     a, b = it.tee(iterable)
@@ -31,7 +30,6 @@ def ListOrientedDoubleAreas(e):
 		x.append(ot.OrientedDoubleArea(triple[0],triple[1],triple[2]))
 	return x	
 
-
 def ListOrderTypes(e):
 	x = []
 	for triple in iter(e):
@@ -42,7 +40,6 @@ def ListOrderTypes(e):
 			x.append(0)
 	return x	
 
-
 def CountColinear(f):
 	a = 0
 	for i in f:
@@ -52,7 +49,9 @@ def CountColinear(f):
 			
 		
 		
+def do():
+	a = (ListOrderTypes(CoordinateCombinations(makeCoordinateList())))
+	print (a)
+	print ("Number of colinear triples: " + str(CountColinear(a)))
 
-a = (ListOrderTypes(CoordinateCombinations(makeCoordinateList())))
-print (a)
-print ("Number of colinear triples: " + str(CountColinear(a)))
+do()
