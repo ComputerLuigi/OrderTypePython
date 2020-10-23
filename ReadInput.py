@@ -9,6 +9,7 @@ def pairwise(iterable):
     return zip(a, b)
 
 def makeCoordinateList():
+	##reads a file with one x,y pair per line and returns a list of tuples [(x1,y1)...(xn,yn)]
 	a = []
 	with open( 'input' ) as f:
 		for line in f:
@@ -24,11 +25,23 @@ def CoordinateCombinations(d):
 	e = (it.combinations(d,3))
 	return e
 
-def ListOrderTypes(e):
+def ListOrientedDoubleAreas(e):
 	x = []
 	for triple in iter(e):
 		x.append(ot.OrientedDoubleArea(triple[0],triple[1],triple[2]))
 	return x	
+
+
+def ListOrderTypes(e):
+	x = []
+	for triple in iter(e):
+		b = (ot.OrientedDoubleArea(triple[0],triple[1],triple[2]))
+		if b != 0:
+			x.append(b / abs(b))
+		else:
+			x.append(0)
+	return x	
+
 
 def CountColinear(f):
 	a = 0
