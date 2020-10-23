@@ -30,4 +30,16 @@ def ListOrderTypes(e):
 		x.append(ot.OrientedDoubleArea(triple[0],triple[1],triple[2]))
 	return x	
 
-print(ListOrderTypes(CoordinateCombinations(makeCoordinateList())))
+def CountColinear(f):
+	a = 0
+	for i in f:
+		if i == 0:
+			a += 1
+	return a
+			
+		
+		
+
+a = (ListOrderTypes(CoordinateCombinations(makeCoordinateList())))
+print (a)
+print ("Number of colinear triples: " + str(CountColinear(a)))
