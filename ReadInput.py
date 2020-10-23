@@ -21,6 +21,7 @@ c2 = (a[2],a[3])
 c3 = (a[4],a[5])
 d = list (pairwise(a))
 d = d[0::2]
-print (d)
-z = ot.OrientedDoubleArea(c1,c2,c3)
-print (z)
+e = list(it.combinations(d,3))
+for triple in e:
+	x = ot.OrientedDoubleArea(triple[0],triple[1],triple[2])
+	print (x)
