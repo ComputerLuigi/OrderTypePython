@@ -56,8 +56,16 @@ def CountColinear(f):
 		
 		
 def do():
-	a = (ListOrderTypes(CoordinateCombinations(MakeCoordinateList(ReadInputFile('input2')))))
+	a = (ListOrderTypes(CoordinateCombinations(MakeCoordinateList(ReadInputFile('input')))))
 	print (a)
 	print ("Number of colinear triples: " + str(CountColinear(a)))
+
+	b = (ListOrderTypes(CoordinateCombinations(MakeCoordinateList(ReadInputFile('input2')))))
+	print (b)
+	print ("Number of colinear triples: " + str(CountColinear(b)))
+
+	if a == b:
+		print ("Coordinate sets are ordertype equivalent")
+
 
 do()
