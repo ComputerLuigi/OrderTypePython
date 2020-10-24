@@ -21,6 +21,7 @@ def test_colinear_ot():
 	assert ri.ListOrderTypes(a) == [0]
 
 
+
 def test_coordinate_packer():
 	a = [1,2,3,4,5,6]
 	import ReadInput as ri
