@@ -33,7 +33,7 @@ def ListOrientedDoubleAreas(e):
 
 def ListOrderTypes(e):
 	x = []
-	for triple in iter(e):
+	for triple in (e):
 		b = (ot.OrientedDoubleArea(triple[0],triple[1],triple[2]))
 		if b != 0:
 			x.append(b / abs(b))
