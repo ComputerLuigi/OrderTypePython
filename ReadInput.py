@@ -7,9 +7,9 @@ def pairwise(iterable):
     next(b, None)
     return zip(a, b)
 
-def ReadInputFile():
+def ReadInputFile(filename):
 	a = []
-	with open( 'input' ) as f:
+	with open (filename) as f:
 		for line in f:
 			words = line.split(',')
 			b = (int(words[0]),int(words[1]))
@@ -56,7 +56,7 @@ def CountColinear(f):
 		
 		
 def do():
-	a = (ListOrderTypes(CoordinateCombinations(MakeCoordinateList(ReadInputFile()))))
+	a = (ListOrderTypes(CoordinateCombinations(MakeCoordinateList(ReadInputFile('input2')))))
 	print (a)
 	print ("Number of colinear triples: " + str(CountColinear(a)))
 
