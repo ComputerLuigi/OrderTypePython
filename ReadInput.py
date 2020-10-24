@@ -17,21 +17,25 @@ def ReadInputFile():
 		return a
 
 def MakeCoordinateList(a):
+## Makes a pairwise list of all the input ints and then deletes every other one leaving us with a list of tuples
 	d = list (pairwise(a))
 	d = d[0::2]
 	return d
 
 def CoordinateCombinations(d):
+## Takes a list of 2-tuples and returns an iterator with all unique triples
 	e = (it.combinations(d,3))
 	return e
 
 def ListOrientedDoubleAreas(e):
+## Takes an iterator containing triples of 2-tuples and returns a list of the double areas
 	x = []
 	for triple in iter(e):
 		x.append(ot.OrientedDoubleArea(triple[0],triple[1],triple[2]))
 	return x	
 
 def ListOrderTypes(e):
+## Same as ListOrientedDoubleAreas, except just the sign (-1,0,1)
 	x = []
 	for triple in (e):
 		b = (ot.OrientedDoubleArea(triple[0],triple[1],triple[2]))
@@ -42,6 +46,7 @@ def ListOrderTypes(e):
 	return x	
 
 def CountColinear(f):
+## Takes a list and counts zeros 
 	a = 0
 	for i in f:
 		if i == 0:
